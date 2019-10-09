@@ -1,0 +1,6 @@
+## webpack
+
++  webpack内部基于事件流,tapable
+
+
+1.webpack启动后自动从entry里面的配置module开始递归解析Entry依赖的所有module，每找到一个module，就会根据配置的loader去找出对应的转换规则，对module进行转换后，再解析出当前Module依赖的Module，这些模块以Entry为单位进行分组，一个Entry和其依赖的的Module，被分到一个组里也就是一个chunk，最后webpack会把所有的chunk转换为文件输出，在整个事件流webpack会在适当的时机里执行Plugin里面的逻辑
